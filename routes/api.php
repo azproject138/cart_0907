@@ -35,4 +35,5 @@ Route::get('/transaksi/dataTable', [Transaksi::class, 'dataDatables']);
 Route::get('/provinsi', [Keranjang::class, 'get_prov']);
 Route::get('/kota/{kode}', [Keranjang::class, 'get_kota']);
 Route::get('/kecamatan/{kode}', [Keranjang::class, 'get_kec']);
+Route::get('/transaksi/laporan', [Transaksi::class, 'laporan_api']);
 
