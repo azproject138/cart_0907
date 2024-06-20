@@ -8,7 +8,7 @@
  <div class="row">
  <div class="col">
  <label>Tanggal Awal</label>
- <input class="form-control" type="date" name="tgl_awal" id="tgl_awal" onchange="cekLaporan">
+ <input class="form-control" type="date" name="tgl_awal" id="tgl_awal" onchange="cekLaporan()">
  </div>
  <div class="col">
  <label>Tanggal Akhir</label>
