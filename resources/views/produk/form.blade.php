@@ -31,7 +31,7 @@
 	</style>
 
 <form id="formData" enctype="multipart/form-data" method="POST" action="{{ url('produk') }}">
- @csr
+
 	<table>
 		<tr>
 			<td>Kode Produk</td>
@@ -120,7 +120,6 @@
         }
     })
 </script>
-
 	<script type="text/javascript">
 	$("html").on("drop", function (e) {
 	e.preventDefault();
@@ -158,5 +157,7 @@
 	$(".upload-area > h2").text("File yang dipilih : " + file.name);
 	});
 	</script>
+
+
 
 @endsection
