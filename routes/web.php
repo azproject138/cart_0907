@@ -24,10 +24,6 @@ Route::get('/keranjang', [Keranjang::class, 'index']);
 
 Route::get('/checkout', [Transaksi::class, 'checkout']);
 Route::post('/checkout', [Transaksi::class, 'store']);
-
 Route::get('/transaksi', [Transaksi::class, 'index']);
-<<<<<<< HEAD
-=======
-
->>>>>>> 022bf93e41bb50b259066187272d49a589adb951
 Route::get('/laporan', [Transaksi::class, 'laporan']);
+Route::post('/produk', [Produk::class, 'store_no_api']);
