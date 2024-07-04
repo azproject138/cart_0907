@@ -41,7 +41,11 @@ return [
             'provider' => 'users',
         ],
     ],
-
+    'auth_user' => [
+        'driver' => 'session',
+        'provider' => 'pelanggan',
+        ],
+       
     /*
     |--------------------------------------------------------------------------
     | User Providers
@@ -64,13 +68,18 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        'pelanggan' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\UserModel::class,
+            ],
+    
 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
     ],
-
+   
     /*
     |--------------------------------------------------------------------------
     | Resetting Passwords

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Produk;
 use App\Http\Controllers\Keranjang;
 use App\Http\Controllers\Transaksi;
-
+use App\Http\Controllers\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +29,5 @@ Route::get('/laporan', [Transaksi::class, 'laporan']);
 
 
 Route::post('/produk', [Produk::class, 'store_no_api']);
+Route::get('/login', [User::class, 'login']);
+Route::post('/login', [User::class, 'loginProcess']);

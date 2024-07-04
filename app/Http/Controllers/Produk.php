@@ -332,46 +332,7 @@ class Produk extends Controller
             'data' => $data_formatted
         ];
 
-    
-
         return json_encode($data_json);
     }
-                public function store_no_api(Request $request)
-            {
-            // untuk upload file
-            $request->validate([
-            'foto_produk' => 'mimes:png,jpg,jpeg|max:2048',
-            ]);
-            $foto = 'produk_'.$request->input('kode_produk').'-'.time().'.'.$request->file->extension();
-            $request->file->move(public_path(foto_produk), $foto);
-            // end
-            $request->validate([
-            'kode_produk' => 'required|unique:produk,kode_produk',
-            'nama_produk' => 'required',
-            'deskripsi' => 'required',
-            'stok_produk' => 'required|min:1|numeric',
-            'harga_jual' => 'required|min:1000|numeric'
-            ]);
-            $produk = new Produkmodel([
-            'kode_produk' => $request->get('kode_produk'),
-            'nama_produk' => $request->get('nama_produk'),
-            'deskripsi' => $request->get('deskripsi'),
-            'stok' => $request->get('stok_produk'),
-            'harga' => $request->get('harga_jual'),
-            'foto_produk' => $foto,
-            ]);
-            $saved = $produk->save();
-            if(!$saved){
-            $data_json = [
-            'pesan' => 'Gagal Menambah Data',
-            'produk' => $produk,
-            ];
-            } else {
-            $data_json = [
-            'pesan' => 'Sukses',
-            'produk' => $produk,
-            ];
-            }
-            return redirect('/produk');
-            }
 }
+
