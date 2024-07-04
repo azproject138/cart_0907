@@ -27,6 +27,8 @@
 						<p>List Barang</p>
 					</a>
 				</li>
+				@if(session()->has('id_user'))
+
 				<li class="nav-item">
 					<a href="{{ url('produk/form') }}" class="nav-link">
 						<i class="fas fa-circle nav-icon"></i>
@@ -52,11 +54,21 @@
 					</a>
 				</li>
 				<li class="nav-item">
+ <a href="{{ url('logout') }}" class="nav-link">
+ <i class="fas fa-circle nav-icon"></i>
+ <p>Logout</p>
+ </a>
+ </li>
+
+				@endif
+				@if(!session()->has('id_user')) 
+				<li class="nav-item">
 					<a href="{{ url('login') }}" class="nav-link">
 						<i class="fas fa-circle nav-icon"></i>
 						<p>Login</p>
 					</a>
 				</li>
+@endif
 			</ul>
 		</nav>
 		<!-- /.sidebar-menu -->

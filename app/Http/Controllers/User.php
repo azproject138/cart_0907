@@ -28,8 +28,17 @@ class User extends Controller
         // Authentication passed
         Auth::login ($user);
         $request->session()->regenerate();
+        session(['nama' => $user->nama]);
+        session(['id_user' => $user->id_user]);
         return redirect()->intended('/transaksi');
         }
+        public function logout(Request $request)
+ {
+ Auth::guard('auth_user')->logout();
+ $request->session()->invalidate();
+ $request->session()->regenerateToken();
+ return redirect('/');
+ }
     /**
      * Display a listing of the resource.
      */
